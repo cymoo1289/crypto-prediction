@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
+import tensorflow 
 
 st.title("Cryptocurreny Prediction Demo")
 st.write("Showing **XRP-USD** Crypto Price Graph")
-df_ori = pd.read_csv("../../data/XRP-USD.csv")
+df_ori = pd.read_csv("data/XRP-USD.csv")
 df1 = df_ori[['Date','Close']]
 df2 = df_ori[['Date','Volume']]
 st.slider(label="slide")
