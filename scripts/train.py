@@ -115,6 +115,7 @@ print(mean_absolute_error(preds, y_test))
 
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
+<<<<<<< HEAD
 import math
 print(len(X_train), len(X_test), len(y_train), len(y_test))
 
@@ -123,6 +124,16 @@ print(len(X_train), len(X_test), len(y_train), len(y_test))
 # r2_score=r2_score(y_test, preds)
 # print(r2_score*100)
 
+=======
+
+print(len(X_train), len(X_test), len(y_train), len(y_test))
+
+SCORE_MSE=mean_squared_error(preds, y_test)
+print(SCORE_MSE)
+r2_score=r2_score(y_test, preds)
+print(r2_score*100)
+
+>>>>>>> 515c42c892de466d3fb306a6939db448c9649834
 preds = test_data[aim].values[:-window_len] * (preds + 1) #inverse normalize 
 preds = pd.Series(index=targets.index, data=preds)
 
