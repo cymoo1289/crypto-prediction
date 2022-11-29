@@ -1,0 +1,15 @@
+credentials:
+  usernames:
+    moo:
+      name: MOO
+      password: '$2b$12$GndD9vJFvOjIFkYXW79YaOPvqaVPHRNSo2bZ3nGja8NqaBGxL.pFC' # To be replaced with hashed password
+    moo2:
+      name: MOO2
+      password: '$2b$12$hgcBpZWNxm/9X87Fz89tuOhzT6hzYDAoOAcDX6.EZ8dA.iD5x2OxW' # To be replaced with hashed password
+cookie:
+  expiry_days: 30
+  key: some_signature_key
+  name: some_cookie_name
+preauthorized:
+  emails:
+  - cymoo12@gmail.com
