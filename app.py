@@ -54,14 +54,14 @@ def register_page():
 def data_analysis_page():
     st.title("Data Analysis")
     model_btc = model.LSTM_MODEL("BTC","models/lstm_model_2.h5")
-    df = model_btc.get_yahoo_data()
+    #df = model_btc.get_yahoo_data()
     # import pandas_datareader as web
     # df = web.DataReader("BTC-USD", data_source = 'yahoo', start = "2018-01-01" ,end = "2022-12-03")
     # print(df)
     model_btc.get_lstm_model()
     #df = df.filter(['Close'])
-    print(df.columns)
-    st.line_chart(data = df, y = "Close")
+    #print(df.columns)
+    #st.line_chart(data = df, y = "Close")
 
     if st.button("Predict"):
         preds= model_btc.predict_result()[0][0] 
@@ -100,9 +100,38 @@ authenticator = stauth.Authenticate(
 )
 
 
-name, authentication_status, username = authenticator.login("Login", "main")
+
+
+# try:
+#     if authenticator.register_user('Register user', preauthorization = False):
+#         print(config)
+#         with open('config.yaml', 'w') as file:
+#             config['credentials'] = authenticator.credentials
+#             yaml.dump(config, file, default_flow_style=False)
+#             print(config)
+#         st.success('User registered successfully')
+# except Exception as e:
+#     st.error(e)
+print(st.session_state["authentication_status"])
+if st.session_state["authentication_status"] is None:
+    selected = option_menu(
+                menu_title=None,  # required
+                options=["Login", "Register"],  # required
+                icons=["house", "book"],  # optional
+                menu_icon="cast",  # optional
+                default_index=0,  # optional
+                orientation="horizontal",
+            )
+
+    if selected == "Login":
+        name, authentication_status, username = authenticator.login("Login", "main")
+    elif selected == "Register":
+        register_page()
+
 
 if st.session_state["authentication_status"]:
+    print(st.session_state)
+
     #authenticator.logout("Logout", "main")
     with st.sidebar:
         selected = option_menu(
@@ -110,7 +139,9 @@ if st.session_state["authentication_status"]:
             options = ["Home","Data Analysis","Register User","Feedback","Password Reset"],
             default_index = 0
         )
+
     authenticator.logout('Logout', 'sidebar')
+
     if selected == "Home":
         home_page()
     elif selected == "Data Analysis":
@@ -127,5 +158,10 @@ elif st.session_state["authentication_status"] == False:
 
 elif st.session_state["authentication_status"] == None:
     st.warning('Please enter your username and password')
+
+
+       
+
+
 
     

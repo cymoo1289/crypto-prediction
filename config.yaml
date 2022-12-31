@@ -4,6 +4,26 @@ cookie:
   name: some_cookie_name
 credentials:
   usernames:
+    '123':
+      email: '123'
+      name: '123'
+      password: $2b$12$jwGPHRWTOdRIpnVQR1GXxu3yQGtPwLFixbeWw1eRv46SbMTo/GfCi
+    '12345':
+      email: '12345'
+      name: '12345'
+      password: $2b$12$y0MQHyTg6QtvrLq4oXNZ2OZBpF28TlBlV8GHnRb4nBzKiYdFSTTxG
+    '123456':
+      email: '123456'
+      name: '123456'
+      password: $2b$12$cAordvPx9NhLcAg2hCD/fuqlYlk/uQpd5vOEL.9aTa1PtRgKmLxsi
+    '456':
+      email: '456'
+      name: '456'
+      password: $2b$12$Mh8S.2/IFDM/uIKm1IsQtuF2Phm7E9I.XBMSqPy0jbhA7b0RUrcOS
+    aaaa:
+      email: aaaa
+      name: aaaa
+      password: $2b$12$ItOHYaGDCjWHZYcrmcVdx.h3GU0dPkB0SHLYVB0ttYmkggWx4tLa2
     cc:
       email: cc
       name: cc
@@ -18,6 +38,10 @@ credentials:
       email: xx
       name: xx
       password: $2b$12$7xG5GghTbrMmRJful5foHuhhKJ2taQmp769FFau5gyWSYKEBU.p46
+    xxx:
+      email: xxx
+      name: xxx
+      password: $2b$12$NVdbETHfjke3/DfnYkkPtut7Wc.T8qWkrfCC4R/Ld14hpRntGwEKe
 preauthorized:
   emails:
   - cymoo12@gmail.com

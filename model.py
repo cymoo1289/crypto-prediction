@@ -60,8 +60,8 @@ class LSTM_MODEL:
 
 
 
-model_btc = LSTM_MODEL("BTC","models/lstm_model_2.h5")
-data = model_btc.get_yahoo_data()
-print(data)
+# model_btc = LSTM_MODEL("BTC","models/lstm_model_2.h5")
+# data = model_btc.get_yahoo_data()
+# print(data)
 #model_btc.get_lstm_model()
 #model_btc.predict_result()
